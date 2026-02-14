@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f8fb;
+  margin: 0;
+  padding: 0;
+}
+
+#product-ls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 800px;
+  padding: 0 40px 40px;
+  margin: 0 auto;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.item button {
+  background: hotpink;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+nav {
+  margin-top: 8px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+nav a.active {
+  background: #e6f0ff;
+  color: #2b64b1;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f8fb;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background: #2b64b1;
+  color: white;
+  padding: 15px 30px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  margin-top: 8px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+nav a.active {
+  background: #e6f0ff;
+  color: #2b64b1;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Tiêu đề */
+.title {
+  text-align: center;
+  margin: 20px 0;
+}
