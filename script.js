@@ -20,6 +20,7 @@ let newObj = {
 
 products.push(newObj);
 
+// Lấy dữ liệu từ localStorage, nếu không có thì lấy mảng rỗng
 let carts = JSON.parse(localStorage.getItem("cart")) || [];
 
 function createItem(product) {
@@ -63,11 +64,16 @@ function showProduct(arr) {
 showProduct(products);
 
 function addToCart(productId) {
+  // Lấy dữ liệu từ localStorage, nếu không có thì lấy mảng rỗng
   let carts = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Tìm sản phẩm trong mảng products
   const product = products.find((p) => p.id === productId);
 
+  // Tìm sản phẩm trong mảng carts
   const exist = carts.find((item) => item.id === productId);
 
+  // Nếu sản phẩm đã có trong giỏ hàng thì tăng số lượng
   if (exist) {
     exist.quant += 1;
   } else {
@@ -80,6 +86,7 @@ function addToCart(productId) {
     });
   }
 
+  // Lưu dữ liệu vào localStorage
   localStorage.setItem("cart", JSON.stringify(carts));
   alert("Sản phẩm đã được đưa vào giỏ hàng!");
 }

@@ -1,5 +1,7 @@
+// Lấy dữ liệu từ localStorage, nếu không có thì lấy mảng rỗng
 let carts = JSON.parse(localStorage.getItem("cart")) || [];
 
+// Hiển thị giỏ hàng
 function showCart(products) {
   const cartList = document.getElementById("cart-ls");
   cartList.innerHTML = "";
@@ -35,12 +37,18 @@ function showCart(products) {
 
 showCart(carts);
 
+// Xóa sản phẩm khỏi giỏ hàng
 function deleteRow(btn) {
   const row = btn.closest(".tbl-row");
   const id = row.id;
 
+  // Xóa sản phẩm khỏi mảng carts
   carts = carts.filter((item) => item.id !== id);
+
+  // Lưu dữ liệu vào localStorage
   localStorage.setItem("cart", JSON.stringify(carts));
+
+  // Hiển thị lại giỏ hàng
   showCart(carts);
 }
 
@@ -54,21 +62,29 @@ function addOneInRow(btn) {
     }
     return item;
   });
+  // Lưu dữ liệu vào localStorage
   localStorage.setItem("cart", JSON.stringify(carts));
+  // Hiển thị lại giỏ hàng
   showCart(carts);
 }
 
 function minusOneInRow(btn) {
+  // Lấy id của sản phẩm
   const row = btn.closest(".tbl-row");
   const id = row.id;
 
+  // Tìm sản phẩm trong mảng carts
   const item = carts.find((item) => item.id === id);
 
+  // Nếu số lượng <= 1 thì xóa sản phẩm khỏi giỏ hàng
   if (item.quant <= 1) {
     carts = carts.filter((item) => item.id !== id);
   } else {
     item.quant -= 1;
   }
+
+  // Lưu dữ liệu vào localStorage
   localStorage.setItem("cart", JSON.stringify(carts));
+  // Hiển thị lại giỏ hàng
   showCart(carts);
 }
