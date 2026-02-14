@@ -20,6 +20,8 @@ let newObj = {
 
 products.push(newObj);
 
+let carts = JSON.parse(localStorage.getItem("cart")) || [];
+
 function createItem(product) {
   let newDiv = document.createElement("div");
   newDiv.className = "item";
@@ -37,8 +39,7 @@ function createItem(product) {
   btn.id = product.id;
   btn.innerText = "Mua";
   btn.onclick = function () {
-    alert("Sản phẩm đã được đưa vào giỏ hàng!");
-    
+    addToCart(product.id);
   };
 
   newDiv.appendChild(img);
@@ -61,6 +62,26 @@ function showProduct(arr) {
 
 showProduct(products);
 
-function changeTab(){
-  
+function addToCart(productId) {
+  let carts = JSON.parse(localStorage.getItem("cart")) || [];
+  const product = products.find((p) => p.id === productId);
+
+  const exist = carts.find((item) => item.id === productId);
+
+  if (exist) {
+    exist.quant += 1;
+  } else {
+    carts.push({
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      quant: 1,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(carts));
+  alert("Sản phẩm đã được đưa vào giỏ hàng!");
 }
+
+function changeTab() {}
