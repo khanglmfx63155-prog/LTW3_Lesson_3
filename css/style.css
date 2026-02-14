@@ -87,5 +87,32 @@ nav a.active {
 
 .title {
   text-align: center;
-  margin: 20px 0;
+  width: 800px;
+  margin: 0 auto;
+  border-bottom: 3px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+.cart-table {
+  width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: white;
+}
+
+.cart-table th,
+.cart-table td {
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #307fc4;
+  color: white;
+  border-radius: 5px;
+}
+
+.specialbutton {
+  background-color: #dc3b89;
+  color: white;
+  border-radius: 5px;
 }

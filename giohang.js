@@ -26,7 +26,7 @@ function showCart(products) {
           <button onclick="minusOneInRow(this)">-</button>
           <span class="countBox">${product.quant}</span>
           <button onclick="addOneInRow(this)">+</button>
-          <button onclick="deleteRow(this)">Xóa</button>
+          <button onclick="deleteRow(this)" class="specialbutton">Xóa</button>
         </div>
       </td>
     `;
