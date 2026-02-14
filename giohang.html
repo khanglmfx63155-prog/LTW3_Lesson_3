@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ICanTech Shop</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ICanTech's Shop</h1>
+      <nav>
+        <a href="#">Trang chủ</a>
+        <a href="./index.html">Sản phẩm</a>
+        <a href="#cart" class="active">Giỏ hàng</a>
+      </nav>
+    </header>
+    <h2 class="title">Sản phẩm</h2>
+    <div id="product-ls"></div>
+    <h2 id="cart" class="title">Giỏ hàng</h2>
+    <table width="100%" cellpadding="10">
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Giá</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="cart-ls"></tbody>
+    </table>
+    <script src="giohang.js"></script>
+  </body>
+</html>
